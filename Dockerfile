@@ -13,12 +13,11 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y -q \
 		libcurl3 \
 		libfuse2 \
 	--no-install-recommends
-RUN rm -r /var/lib/apt/lists/*
+RUN rm -rf /var/lib/apt/lists/*
 
 ADD https://www.urbackup.org/downloads/Server/${VERSION}/debian/stable/urbackup-server_${VERSION}_amd64.deb /root/urbackup-server_amd64.deb
 RUN echo /var/urbackup | dpkg -i /root/urbackup-server_amd64.deb
-
-#RUN apt install -f
+RUN rm -rf /root/urbackup-server_amd64.deb
 
 EXPOSE 55413
 EXPOSE 55414
