@@ -1,5 +1,5 @@
 FROM debian:jessie
-ENV VERSION 2.0.38
+ENV VERSION 2.1.18
 MAINTAINER porchn <pichai.chin@gmail.com>
 
 RUN apt-get update 
